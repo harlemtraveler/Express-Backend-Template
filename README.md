@@ -31,46 +31,48 @@ check _package.js_
 
 Server.js (where to load app requires, app definition, middleware, listener)
 
-config —|_
-          |—|-connection.js
-              |-dbConfig.js
-
-
-controllers—|___
-                |—|—myappController (handles request)(require  the model because it use the functions within it to retrieve data from DB)
-                    |
-                    |—myappViewController (handles request)(will render views to pass DB data)
-
-
-db————|_      
-        |—|—schema.sql (the table declaration and table structure)
-            |
-            | —seed.sql (The initial table content injection)
-
-
+config
+|     connection.js
+|     dbConfig.js
+|
+|
+|
+controllers
+|          myappController (handles request)(require  the model because it use the functions within it to retrieve data from DB)
+|                  
+|          myappViewController (handles request)(will render views to pass DB data)
+|
+|
+db     
+| schema.sql (the table declaration and table structure)
+| seed.sql (The initial table content injection)
+|
+|
 models— (Database queries)
-
-
-routes— (the client query that link to the DB queries inside of the models file)(handles request)(http request -> path —passes functions to handle the request)
-
-
-views-|_
-       |     
-       |—|— partials——|—boilerplate_
-           |                        |
-           |                        |—footer
-           |                        |
-           |                        |—object-wrapper
-           |
-           |
-           |
-           |—app-pages—|_
-                        |
-                        |—
-
+|
+|
+routes (the client query that link to the DB queries inside of the models file)(handles request)(http request -> path —passes functions to handle the request)
+|
+|
+views
+|    app-pages
+|    |       
+|    |          
+|    |                     
+|    |                        
+|    |
+|    |__partials
+|               boilerplate
+|               footer
+|               object-wrapper
+|                       
+|
 public (static (css, one off js))
-
-_dependencies_ (package.js, .gitignore, node-models)
+|
+dependencies
+            package.js
+            .gitignore
+            node-models
 ```
 ********************************
 
